@@ -183,6 +183,20 @@
                 margin : 0px 10px 0px 2px;
             }
 
+            #spectrometerInfoTable td {
+                text-align : center;
+            }
+
+            #spectrometerInfoTable  {
+                text-align : center;
+                width : 300px;
+            }
+
+            #spectrometerNameDisplay {
+                text-align : center;
+
+            }
+
             #resultTable {
                 width : 475px;
                 margin : 5px 25px 5px 5px;
@@ -320,7 +334,7 @@
                             <div id = "shamrock163choice" class = "minipic"></div>
                             <div class = 'picLabel'>
                             SHAMROCK 163<br>   
-                            <button class = "spectrometerChoiceButton" value = "sr163">CHOOSE SR-163</button>
+                            <button class = "spectrometerChoiceButton" value = "Shamrock 163">CHOOSE SR-163</button>
                             <div></div>
                         </td>
 
@@ -328,7 +342,7 @@
                             <div id = "kymera193choice" class = "minipic"></div>
                             <div class = 'picLabel'>
                             KYMERA 193<br>   
-                            <button class = "spectrometerChoiceButton" value = "ky193">CHOOSE KY-193</button>
+                            <button class = "spectrometerChoiceButton" value = "Kymera 193">CHOOSE KY-193</button>
                             <div></div>
                         </td>
 
@@ -336,7 +350,7 @@
                             <div id = "kymera328choice" class = "minipic"></div>
                             <div class = 'picLabel'>
                             KYMERA 328<br>   
-                            <button class = "spectrometerChoiceButton" value = "ky328">CHOOSE KY-328</button>
+                            <button class = "spectrometerChoiceButton" value = "Kymera 328">CHOOSE KY-328</button>
                             <div></div>
                         </td>
                     </tr>
@@ -346,7 +360,7 @@
                             <div id = "shamrock500choice" class = "minipic"></div>
                             <div class = 'picLabel'>
                             SHAMROCK 500<br>   
-                            <button class = "spectrometerChoiceButton" value = "sr500">CHOOSE SR-500</button>
+                            <button class = "spectrometerChoiceButton" value = "Shamrock 500">CHOOSE SR-500</button>
                             <div></div>
                         </td>
 
@@ -354,7 +368,7 @@
                             <div id = "shamrock750choice" class = "minipic"></div>
                             <div class = 'picLabel'>
                             SHAMROCK 750<br>   
-                            <button class = "spectrometerChoiceButton" value = "sr750">CHOOSE SR-750</button>
+                            <button class = "spectrometerChoiceButton" value = "Shamrock 750">CHOOSE SR-750</button>
                             <div></div>
                         </td>
 
@@ -366,9 +380,7 @@
                 <div class = "fancyTableDiv">
                     <table class = "fancyTable" id = "spectrometerInfoTable">
                         <tr>
-                            <th><span style = "color : rgb(28, 38, 116);">SELECT DETECTOR<br> MODEL</span></th>
-                            <th>ACTIVE PIXELS</th>
-                            <th>PIXEL SIZE</th>
+                            <th id = "spectrometerNameDisplay" colspan = 2 style = "color : rgb(28, 38, 116);"> </th>
                         </tr>
 
                     </table>
@@ -380,6 +392,8 @@
         <div id = "step3" class = "blueBanner">
             STEP 3 - CENTER WAVELENGTH
         </div>
+
+        <input id = "centerWavelengthInput" type = "text">
 
         <div id = "step3" class = "blueBanner">
             STEP 4 - CHOOSE A GRATING
