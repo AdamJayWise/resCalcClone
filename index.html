@@ -1,0 +1,333 @@
+<html>
+    <head>
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+        <style>
+
+            body {
+                font-family: 'Open Sans', sans-serif;
+            }
+
+            #mainCanvas{
+                margin : 0 40px 0 40px;
+            }
+
+            #mainTitle {
+                font-size : 24px;
+                text-align : center;
+                margin : 50px 0 50px 0;
+            }
+
+            .blueBanner {
+                color : white;
+                background-color: rgb(28, 38, 116);
+                padding : 10px;
+                font-weight : bold;
+                font-size : 14;
+                margin : 20px 0 10px 0;
+            }
+
+            .flexRowContainer {
+                display : flex;
+                flex-direction: row;
+                margin : 0 30px 0 30px;
+            }
+
+            .cameraChoiceButton{
+                padding : 4px;
+                color : white;
+                font-weight : bold;
+                font-size : 12px;
+                border-radius : 3.6px;
+                margin : 6px;
+                border : 1px solid black;
+                background-image: linear-gradient(#4656d2 , #1c2674);
+            }
+
+
+            .choiceTable {
+                text-align:center;
+                width : 120px;
+                height : 168px;
+                vertical-align: bottom;
+                font-size : 12px;
+                font-weight : bold;
+                margin : 10px;
+                background-repeat: no-repeat;
+                border-collapse: separate;
+                border-spacing: 15px 5px;
+            }
+
+            .miniPic {
+                width : 120px;
+                height : 168px;
+            }
+
+            .picLabel {
+                margin-top : -50px;
+                width : 140px;
+            }
+
+            #iXonChoice {
+                background-image : url("img/ixon.png")
+            }
+
+            #newtonChoice {
+                background-image : url("img/newton.png")
+            }
+
+            #istarChoice {
+                background-image : url("img/istar.png")
+            }
+
+            #iDusChoice {
+                background-image : url("img/idus.png")
+            }
+
+            #iKonMChoice {
+                background-image : url("img/ikon-m.png")
+            }
+            
+            #sCMOSChoice {
+                background-image : url("img/scmos.png")
+            }
+
+
+            .fancyTable {
+                color : #444;
+                font-size : 12px;
+                background-color : #e0e0e0;
+                box-shadow:rgb(209, 209, 209) 0px 1px 2px 0px;
+                font-weight : bold;
+                border : 1px solid gray;
+                border-radius : 3px;
+                text-align : left;
+                text-shadow : rgb(255, 255, 255) 1px 1px 0px;
+                border-spacing : 3px;
+            }
+
+            .fancyTable th {
+                background-color: #e0e0e0;
+                border-collapse: collapse;
+                border-top : 1px solid white;
+            }
+
+            
+            .fancyTable td {
+                background-color : #fff;
+                padding : 8px;
+                border-radius : 2px;
+                border-left : 0.5px solid #aaa;
+                border-bottom : 0.5px solid #aaa;
+                border-top : 0.5px solid #fff;
+                border-right : 0.5px solid #fff;
+            } 
+
+            .fancyTable tr, .fancyTable td {
+                
+            } 
+
+             .fancyTable td, .fancyTable th {
+                padding : 5px;
+            }
+
+            #resultTable {
+                width : 475px;
+                margin : 5px 25px 5px 5px;
+            }
+
+            #resultTable th {
+                text-align: center;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id = "mainCanvas">
+
+        <div id = "mainTitle">
+            Resolution Calculator
+        </div>
+
+        <div id = "step1" class = "blueBanner">
+            STEP 1 - CHOOSE A DETECTOR
+        </div>
+
+        <div class = "flexRowContainer">
+            <div id = "cameraChoice">
+                <table class = "choiceTable">
+
+                    <tr>
+                        <td class = "cameraCell">
+                            <div id = "iXonChoice" class = "minipic"></div>
+                            <div class = 'picLabel'>
+                            IXON EMCCD<br>   
+                            <button class = "cameraChoiceButton">SHOW MODELS</button>
+                            <div></div>
+                        </td>
+
+                        <td class = "cameraCell">
+                            <div id = "newtonChoice" class = "minipic"></div>
+                            <div class = 'picLabel'>
+                            NEWTON CCD / EMCCD<br>   
+                            <button class = "cameraChoiceButton">SHOW MODELS</button>
+                            <div></div>
+                        </td>
+
+                        <td class = "cameraCell">
+                            <div id = "iStarChoice" class = "minipic"></div>
+                            <div class = 'picLabel'>
+                            iStar CCD / sCMOS<br>   
+                            <button class = "cameraChoiceButton">SHOW MODELS</button>
+                            <div></div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class = "cameraCell">
+                            <div id = "iDusChoice" class = "minipic"></div>
+                            <div class = 'picLabel'>
+                            IDUS CCD<br>   
+                            <button class = "cameraChoiceButton">SHOW MODELS</button>
+                            <div></div>
+                        </td>
+
+                        <td class = "cameraCell">
+                            <div id = "iKonMChoice" class = "minipic"></div>
+                            <div class = 'picLabel'>
+                            IKON-M CCD<br>   
+                            <button class = "cameraChoiceButton">SHOW MODELS</button>
+                            <div></div>
+                        </td>
+
+                        <td class = "cameraCell">
+                            <div id = "sCMOSchoice" class = "minipic"></div>
+                            <div class = 'picLabel'>
+                            SCMOS CAMERA SERIES<br>   
+                            <button class = "cameraChoiceButton">SHOW MODELS</button>
+                            <div></div>
+                        </td>
+                    </tr>
+
+
+                   
+
+                </table>
+            </div>
+
+            <div id = "modelChoice">
+                <div id = "fancyTableDiv">
+                    <table class = "fancyTable" id = "modelInfoTable">
+                        <tr>
+                            <th><span style = "color : rgb(28, 38, 116);">SELECT DETECTOR<br> MODEL</span></th>
+                            <th>ACTIVE PIXELS</th>
+                            <th>PIXEL SIZE</th>
+                        </tr>
+                        <tr>
+                            <td>Newton 920 CCD</td>
+                            <td>1024 x 255</td>
+                            <td>26</td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    Active Camera Div <br>
+                    STEP 2 - CHOOSE A SPECTROGRAPH
+                </div>
+            </div>
+        </div>
+
+        <div id = "step2" class = "blueBanner">
+            STEP 2 - CHOOSE A SPECTROGRAPH
+        </div>
+
+        <div id = "step3" class = "blueBanner">
+            STEP 3 - CENTER WAVELENGTH
+        </div>
+
+        <div id = "step3" class = "blueBanner">
+            STEP 4 - CHOOSE A GRATING
+        </div>
+
+        <div id = "step3" class = "blueBanner">
+            STEP 5 - RESULTS
+        </div>
+
+        <div class = "flexRowContainer">
+            <div id = "resultTableDiv">
+                <table class = "fancyTable" id = "resultTable">
+                    <tr>
+                        <th></th>
+                        <th>nm</th>
+                        <th>eV</th>
+                        <th>Raman Shift cm-1</th>
+                    </tr>
+
+                    <tr>
+                        <td>Center Wavelength</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Range Start</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>Range End</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Bandpass</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Spectral Resolution</td>
+                        <td></td>
+                        <td></td>
+                        <td rowspan = 3></td>
+                    </tr>
+
+                    <tr>
+                        <td>Maximum Wavelength</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Nominal Dispersion</td>
+                        <td colspan = 2></td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div id = "resultSideBar">
+                Optional - to calculate for Raman Shift, pleae enter the laser wavelength (nm).
+            </div>
+        </div>
+
+    </div>
+
+    </body>
+
+    <script src = 'js/d3.min.js'></script>
+    <script src = 'js/cameras.js'></script>
+    <script src = 'js/spectrometers.js'></script>
+    <script src = 'js/resCalcClone.js'></script>
+
+    </html>
