@@ -65,6 +65,7 @@
             }
 
             .choiceTable {
+                display : inline;
                 text-align:center;
                 width : 120px;
                 height : 168px;
@@ -75,6 +76,11 @@
                 background-repeat: no-repeat;
                 border-collapse: separate;
                 border-spacing: 15px 5px;
+            }
+
+            #cameraChoice, #modelChoice, #spectrometerChoice {
+                flex-grow : 1;
+                text-align : center;
             }
 
             .miniPic {
@@ -126,6 +132,10 @@
                 background-image : url("img/scmos.png")
             }
 
+            #activeCameraDisplay {
+                text-align : right;
+                width : 320px;
+            }
 
             .fancyTableDiv {
                 padding : 30px 0 0 0;
@@ -314,7 +324,7 @@
                     </table>
                 </div>
 
-                <div>
+                <div id = "activeCameraDisplay">
                     Active Camera Div <br>
                     STEP 2 - CHOOSE A SPECTROGRAPH
                 </div>
