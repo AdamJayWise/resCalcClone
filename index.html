@@ -14,7 +14,8 @@
             }
 
             #mainTitle {
-                font-size : 24px;
+                font-size : 30px;
+                font-weight : lighter;
                 text-align : center;
                 margin : 50px 0 50px 0;
             }
@@ -132,6 +133,19 @@
                 padding : 5px;
             }
 
+            #modelInfoTable {
+                width : 320px;
+                text-align : center;
+            }
+
+            #modelInfoTable td:first-child{
+                text-align: left;
+            }
+
+            #modelInfoTable input {
+                margin : 0px 10px 0px 2px;
+            }
+
             #resultTable {
                 width : 475px;
                 margin : 5px 25px 5px 5px;
@@ -139,6 +153,14 @@
 
             #resultTable th {
                 text-align: center;
+            }
+
+            #resultTable td {
+                min-width : 60px;
+            }
+
+            #resultTable td:first-child {
+                width : 160px;
             }
 
         </style>
@@ -166,7 +188,7 @@
                             <div id = "iXonChoice" class = "minipic"></div>
                             <div class = 'picLabel'>
                             IXON EMCCD<br>   
-                            <button class = "cameraChoiceButton">SHOW MODELS</button>
+                            <button class = "cameraChoiceButton" value = "ixon">SHOW MODELS</button>
                             <div></div>
                         </td>
 
@@ -174,7 +196,7 @@
                             <div id = "newtonChoice" class = "minipic"></div>
                             <div class = 'picLabel'>
                             NEWTON CCD / EMCCD<br>   
-                            <button class = "cameraChoiceButton">SHOW MODELS</button>
+                            <button class = "cameraChoiceButton" value = "newton"> SHOW MODELS</button>
                             <div></div>
                         </td>
 
@@ -182,7 +204,7 @@
                             <div id = "iStarChoice" class = "minipic"></div>
                             <div class = 'picLabel'>
                             iStar CCD / sCMOS<br>   
-                            <button class = "cameraChoiceButton">SHOW MODELS</button>
+                            <button class = "cameraChoiceButton" value = "istar">SHOW MODELS</button>
                             <div></div>
                         </td>
                     </tr>
@@ -192,7 +214,7 @@
                             <div id = "iDusChoice" class = "minipic"></div>
                             <div class = 'picLabel'>
                             IDUS CCD<br>   
-                            <button class = "cameraChoiceButton">SHOW MODELS</button>
+                            <button class = "cameraChoiceButton" value = "idus">SHOW MODELS</button>
                             <div></div>
                         </td>
 
@@ -200,7 +222,7 @@
                             <div id = "iKonMChoice" class = "minipic"></div>
                             <div class = 'picLabel'>
                             IKON-M CCD<br>   
-                            <button class = "cameraChoiceButton">SHOW MODELS</button>
+                            <button class = "cameraChoiceButton" value = "ikonm">SHOW MODELS</button>
                             <div></div>
                         </td>
 
@@ -208,10 +230,10 @@
                             <div id = "sCMOSchoice" class = "minipic"></div>
                             <div class = 'picLabel'>
                             SCMOS CAMERA SERIES<br>   
-                            <button class = "cameraChoiceButton">SHOW MODELS</button>
+                            <button class = "cameraChoiceButton" value = "scmos">SHOW MODELS</button>
                             <div></div>
                         </td>
-                    </tr>
+                    </tr> 
 
 
                    
@@ -227,11 +249,7 @@
                             <th>ACTIVE PIXELS</th>
                             <th>PIXEL SIZE</th>
                         </tr>
-                        <tr>
-                            <td>Newton 920 CCD</td>
-                            <td>1024 x 255</td>
-                            <td>26</td>
-                        </tr>
+
                     </table>
                 </div>
                 <div>
@@ -264,7 +282,7 @@
                         <th></th>
                         <th>nm</th>
                         <th>eV</th>
-                        <th>Raman Shift cm-1</th>
+                        <th>Raman Shift cm<sup>-1</sup></th>
                     </tr>
 
                     <tr>
