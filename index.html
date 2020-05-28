@@ -30,12 +30,18 @@
             }
 
             .flexRowContainer {
+                text-align: center;
                 display : flex;
                 flex-direction: row;
                 margin : 0 30px 0 30px;
             }
 
-            .cameraChoiceButton{
+            .flexColContainer {
+                display : flex;
+                flex-direction : column;
+            }
+
+            .cameraChoiceButton, .spectrometerChoiceButton {
                 padding : 4px;
                 color : white;
                 font-weight : bold;
@@ -46,6 +52,17 @@
                 background-image: linear-gradient(#4656d2 , #1c2674);
             }
 
+            .calculateResolutionButton {
+                padding : 4px;
+                color : white;
+                font-weight : bold;
+                font-size : 18px;
+                border-radius : 3.6px;
+                margin : 6px;
+                border : 1px solid black;
+                background-image: linear-gradient(#4656d2 , #1c2674);
+                
+            }
 
             .choiceTable {
                 text-align:center;
@@ -73,25 +90,45 @@
             #iXonChoice {
                 background-image : url("img/ixon.png")
             }
-
             #newtonChoice {
                 background-image : url("img/newton.png")
             }
-
             #istarChoice {
                 background-image : url("img/istar.png")
             }
-
             #iDusChoice {
                 background-image : url("img/idus.png")
             }
-
             #iKonMChoice {
                 background-image : url("img/ikon-m.png")
             }
-            
             #sCMOSChoice {
                 background-image : url("img/scmos.png")
+            }
+
+            
+            #shamrock163choice {
+                background-image : url("img/sr163.png")
+            }
+            #kymera193choice {
+                background-image : url("img/sr193.png")
+            }
+            #kymera328choice {
+                background-image : url("img/sr328.png")
+            }
+            #shamrock500choice {
+                background-image : url("img/sr500.png")
+            }
+            #shamrock750choice {
+                background-image : url("img/sr750.png")
+            }
+            #sCMOSChoice {
+                background-image : url("img/scmos.png")
+            }
+
+
+            .fancyTableDiv {
+                padding : 30px 0 0 0;
             }
 
 
@@ -103,7 +140,7 @@
                 font-weight : bold;
                 border : 1px solid gray;
                 border-radius : 3px;
-                text-align : left;
+                text-align : center;
                 text-shadow : rgb(255, 255, 255) 1px 1px 0px;
                 border-spacing : 3px;
             }
@@ -161,6 +198,16 @@
 
             #resultTable td:first-child {
                 width : 160px;
+                text-align : left;
+            }
+
+            #ramanWavelengthInput {
+                width : 40px;
+                height : 40px;
+                text-align:left;
+                font-size : 20px;
+                padding : 9px;
+                
             }
 
         </style>
@@ -242,7 +289,7 @@
             </div>
 
             <div id = "modelChoice">
-                <div id = "fancyTableDiv">
+                <div class = "fancyTableDiv">
                     <table class = "fancyTable" id = "modelInfoTable">
                         <tr>
                             <th><span style = "color : rgb(28, 38, 116);">SELECT DETECTOR<br> MODEL</span></th>
@@ -252,6 +299,7 @@
 
                     </table>
                 </div>
+
                 <div>
                     Active Camera Div <br>
                     STEP 2 - CHOOSE A SPECTROGRAPH
@@ -262,6 +310,72 @@
         <div id = "step2" class = "blueBanner">
             STEP 2 - CHOOSE A SPECTROGRAPH
         </div>
+
+        <div class = "flexRowContainer">
+            <div id = "spectrometerChoice">
+                <table class = "choiceTable">
+
+                    <tr>
+                        <td class = "cameraCell">
+                            <div id = "shamrock163choice" class = "minipic"></div>
+                            <div class = 'picLabel'>
+                            SHAMROCK 163<br>   
+                            <button class = "spectrometerChoiceButton" value = "sr163">CHOOSE SR-163</button>
+                            <div></div>
+                        </td>
+
+                        <td class = "cameraCell">
+                            <div id = "kymera193choice" class = "minipic"></div>
+                            <div class = 'picLabel'>
+                            KYMERA 193<br>   
+                            <button class = "spectrometerChoiceButton" value = "ky193">CHOOSE KY-193</button>
+                            <div></div>
+                        </td>
+
+                        <td class = "cameraCell">
+                            <div id = "kymera328choice" class = "minipic"></div>
+                            <div class = 'picLabel'>
+                            KYMERA 328<br>   
+                            <button class = "spectrometerChoiceButton" value = "ky328">CHOOSE KY-328</button>
+                            <div></div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class = "cameraCell">
+                            <div id = "shamrock500choice" class = "minipic"></div>
+                            <div class = 'picLabel'>
+                            SHAMROCK 500<br>   
+                            <button class = "spectrometerChoiceButton" value = "sr500">CHOOSE SR-500</button>
+                            <div></div>
+                        </td>
+
+                        <td class = "cameraCell">
+                            <div id = "shamrock750choice" class = "minipic"></div>
+                            <div class = 'picLabel'>
+                            SHAMROCK 750<br>   
+                            <button class = "spectrometerChoiceButton" value = "sr750">CHOOSE SR-750</button>
+                            <div></div>
+                        </td>
+
+                    </tr> 
+                </table>
+            </div>
+
+            <div id = "spectrometerChoice">
+                <div class = "fancyTableDiv">
+                    <table class = "fancyTable" id = "spectrometerInfoTable">
+                        <tr>
+                            <th><span style = "color : rgb(28, 38, 116);">SELECT DETECTOR<br> MODEL</span></th>
+                            <th>ACTIVE PIXELS</th>
+                            <th>PIXEL SIZE</th>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        
 
         <div id = "step3" class = "blueBanner">
             STEP 3 - CENTER WAVELENGTH
@@ -286,9 +400,9 @@
                     </tr>
 
                     <tr>
-                        <td>Center Wavelength</td>
-                        <td></td>
-                        <td></td>
+                        <td >Center Wavelength</td>
+                        <td id = "centerWavelengthNmTd"></td>
+                        <td id = "centerWavelengtheVTd"></td>
                         <td></td>
                     </tr>
 
@@ -334,10 +448,22 @@
                 </table>
             </div>
 
-            <div id = "resultSideBar">
-                Optional - to calculate for Raman Shift, pleae enter the laser wavelength (nm).
+            <div class = "flexColContainer">
+                <div class = "flexRowContainer">
+                    <div id = "resultSideBar">
+                        Optional - to calculate for Raman Shift, pleae enter the laser wavelength (nm).
+                    </div>
+                    <div id = "ramanInput">
+                        <input type = "text" id = "ramanWavelengthInput" value = ''>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <button class = "calculateResolutionButton">CALCULATE RESOLUTION</button>
+                </div>
             </div>
         </div>
+
 
     </div>
 

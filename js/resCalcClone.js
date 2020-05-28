@@ -1,7 +1,9 @@
 console.log('resCalcClone (C)2020 Adam Wise');
 
 
-app = {}; // object of global parameters
+app = {
+    'centerWavelength' : 500,
+}; // object of global parameters
 
 // visual clone of the andor resolution calculator GUI
 
@@ -35,6 +37,7 @@ cameraButtons.on('click', function(d,i){
     Object.keys(availableModels[family]).forEach(function(key){
         console.log(key)
         var camObj = availableModels[family][key];
+        app['activeCamObj'] = camObj;
         var newRow = d3.select('#modelInfoTable').append('tr').classed('tableBodyRow', true);
         var firstCell = newRow.append('td')
         firstCell.append('input').property('type', 'radio');
@@ -45,3 +48,17 @@ cameraButtons.on('click', function(d,i){
     });
     
 })
+
+
+// spectrometer selection callback
+d3.selectAll('.spectrometerChoiceButton')
+
+//
+function updateResults(){
+    //update center wavelength on results table
+    d3.select("#centerWavelengthNmTd").text(app['centerWavelength']);
+    d3.select("#centerWavelengtheVTd").text(1240/app['centerWavelength']);
+    
+}
+
+updateResults();
